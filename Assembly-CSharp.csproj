@@ -56,6 +56,7 @@
      <Compile Include="Assets\Scripts\Door.cs" />
      <Compile Include="Assets\Scripts\item.cs" />
      <Compile Include="Assets\Scripts\playerscript.cs" />
+     <Compile Include="Assets\Scripts\TextFish.cs" />
      <Compile Include="Assets\Scripts\Token.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

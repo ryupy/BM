@@ -2,22 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class item : Token {
+public class TextFish : item {
 
-	public bool itemex = true;
 
 	// Use this for initialization
 	void Start () {
-		
+		GameObject.Find ("Textfish").SetActive (false);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
-
-	void OnTriggerEnter2D(Collider2D collision){
-		DestroyObj();
-		itemex = false;
+		if (!itemex) {
+			
+		}
 	}
 }

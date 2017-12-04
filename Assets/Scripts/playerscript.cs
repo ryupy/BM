@@ -38,6 +38,7 @@ public class playerscript : MonoBehaviour {
 
 		}
 
+		/// A&&B A=trueかつB=trueで1を返す
 		if (Input.GetKeyDown("space") && !jump) {
 			rigidbody2d.AddForce (Vector2.up * flap);
 			jump = true;	

@@ -5,22 +5,27 @@ using UnityEngine.SceneManagement;
 
 public class Door : MonoBehaviour {
 
+	bool near = false; 
+
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
-					
+		if (Input.GetKey(KeyCode.UpArrow) && near) {
+			SceneManager.LoadScene ("test_2");
+		}
 	}
 
 	void OnTriggerEnter2D(Collider2D collision){
-		if (Input.GetKeyDown("space")) {
-			Debug.Log ("door2");
-//			if (collision.tag == "Player") {
-				SceneManager.LoadScene ("test_2");
-			}
+		if (collision.tag == "Player") {
+			near = true;
 		}
 	}
-//}
+	void OnTriggerExit2D(Collider2D collision){
+		if (collision.tag == "Player") {
+			near = false;
+		}
+	}
+}
