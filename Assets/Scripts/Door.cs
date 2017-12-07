@@ -14,7 +14,7 @@ public class Door : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKey(KeyCode.UpArrow) && near) {
-			SceneManager.LoadScene ("test_2");
+			SceneManager.LoadScene ("Title");
 		}
 	}
 

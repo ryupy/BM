@@ -52,11 +52,11 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraController.cs" />
-     <Compile Include="Assets\Scripts\Director.cs" />
      <Compile Include="Assets\Scripts\Door.cs" />
+     <Compile Include="Assets\Scripts\Game_Directer.cs" />
      <Compile Include="Assets\Scripts\item.cs" />
      <Compile Include="Assets\Scripts\playerscript.cs" />
-     <Compile Include="Assets\Scripts\Token.cs" />
+     <Compile Include="Assets\Scripts\Title_Directer.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>/Applications/Unity/Unity.app/Contents/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>

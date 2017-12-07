@@ -4,36 +4,26 @@ using UnityEngine;
 
 public class item : MonoBehaviour {
 
-	public Canvas canvasitemget = null;
-	
+	public static int item_fish_number;
+
 	// Use this for initialization
-	void Start () {
-		if (canvasitemget != null) {
-			canvasitemget.enabled = false;
-		}
+	void Start (){
+		item_fish_number = 0;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		if (canvasitemget.enabled = true) {
-			if (Input.GetKey (KeyCode.DownArrow)) {
-				if (canvasitemget != null) {
-					canvasitemget.enabled = false;
-				}
-			}
-		}
+
 	}
 
 	void OnTriggerEnter2D(Collider2D collision){
 		if (collision.tag == "Player") {
-			Destroy (this.gameObject);
-			itemget ();
+			Destroy (gameObject);
+			item_fish_number += 1;
+		} else {
+			item_fish_number += 0;
 		}
 	}
 
-	public void itemget(){
-		if (canvasitemget != null) {
-			canvasitemget.enabled = true;
-		}
-	}
+
 }

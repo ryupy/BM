@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 
 	GameObject player;
+
 	// Use this for initialization
 	void Start () {
 		this.player = GameObject.Find ("Player");
