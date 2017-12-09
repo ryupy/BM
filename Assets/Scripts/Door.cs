@@ -25,7 +25,6 @@ public class Door : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		Debug.Log (DOORTIME);
 		//ドアフラグ
 		if (DOORTIME == 0) {
 			if (ItemDataBase.items_dict ["Coffee"].item_get) {

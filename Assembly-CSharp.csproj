@@ -62,6 +62,7 @@
      <Compile Include="Assets\Scripts\item.cs" />
      <Compile Include="Assets\Scripts\ItemDataBase.cs" />
      <Compile Include="Assets\Scripts\ItemManager.cs" />
+     <Compile Include="Assets\Scripts\MessageManager.cs" />
      <Compile Include="Assets\Scripts\playerscript.cs" />
      <Compile Include="Assets\Scripts\Title_Directer.cs" />
  <Reference Include="UnityEngine.Analytics">

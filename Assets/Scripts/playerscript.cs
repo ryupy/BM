@@ -12,7 +12,10 @@ public class playerscript : MonoBehaviour {
 	bool jump = false;
 	Rigidbody2D rigidbody2d;
 	Animator animator;
+	GameObject game_director;
+	GameObject text;
 	float speed = 5.0f;
+
 //	GameObject item_data_base;
 //	ItemDataBase _item_data_base;
 
@@ -20,6 +23,8 @@ public class playerscript : MonoBehaviour {
 	void Start () {
 		this.rigidbody2d = GetComponent<Rigidbody2D>();
 		this.animator = GetComponent<Animator> ();
+		this.game_director = GameObject.Find ("GameDirecter");
+		this.text = GameObject.Find ("Text");
 //		item_data_base = GetComponent<ItemDataBase> ();
 //		item_data_base.items.Add (new ItemManager ("Fish", false));
 
@@ -69,7 +74,20 @@ public class playerscript : MonoBehaviour {
 		if (collision.tag == "Coffee") {
 			Debug.Log (ItemDataBase.items_dict["Coffee"].item_name);
 			ItemDataBase.items_dict ["Coffee"].item_get = true;
+			if (ItemDataBase.items_dict ["Coffee"].item_popup_mes) {
+				text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Coffee"].item_get_text;
+				game_director.GetComponent<Game_Directer> ().popup = true;
+			}
 			Destroy (GameObject.Find("Coffee"));
+		} else if(collision.tag == "Fish"){
+			Debug.Log (ItemDataBase.items_dict["Fish"].item_name);
+			ItemDataBase.items_dict ["Fish"].item_get = true;
+			if (ItemDataBase.items_dict ["Fish"].item_popup_mes) {
+				text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Fish"].item_get_text;
+				game_director.GetComponent<Game_Directer> ().popup = true;
+			}
+			Destroy (GameObject.Find("Fish"));
+
 		} else {
 
 		}
