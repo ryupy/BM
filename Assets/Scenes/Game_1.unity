@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 91982175}
   - component: {fileID: 91982177}
   - component: {fileID: 91982176}
+  - component: {fileID: 91982178}
   m_Layer: 5
   m_Name: Fade
   m_TagString: Untagged
@@ -156,7 +157,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 675.5, y: 569.1}
+  m_AnchoredPosition: {x: 415, y: 280}
   m_SizeDelta: {x: 1464.9, y: 1252.7}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &91982176
@@ -192,6 +193,18 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 91982174}
+--- !u!114 &91982178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 91982174}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c81a0ec2439d24760984280b6c9c32ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  alpha: 1
 --- !u!1 &218483018
 GameObject:
   m_ObjectHideFlags: 0
