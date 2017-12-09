@@ -13,8 +13,10 @@ public class Door : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetKey(KeyCode.UpArrow) && near) {
-			SceneManager.LoadScene ("Title");
+		if (ItemDataBase.items_dict ["Coffee"].item_get) {
+			if (Input.GetKey (KeyCode.UpArrow) && near) {
+				SceneManager.LoadScene ("Title");
+			}
 		}
 	}
 

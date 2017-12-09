@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Game_Directer : MonoBehaviour {
 
+
 	public Canvas canvasitemget = null;
 
 	// Use this for initialization
@@ -28,4 +29,5 @@ public class Game_Directer : MonoBehaviour {
 			canvasitemget.enabled = !canvasitemget.enabled;
 		}
 	}
+
 }

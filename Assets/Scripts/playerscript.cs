@@ -3,22 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+
+
 public class playerscript : MonoBehaviour {
+	
 
 	float flap = 200f;
 	bool jump = false;
 	Rigidbody2D rigidbody2d;
 	Animator animator;
 	float speed = 5.0f;
+//	GameObject item_data_base;
+//	ItemDataBase _item_data_base;
 
 	// Use this for initialization
 	void Start () {
 		this.rigidbody2d = GetComponent<Rigidbody2D>();
 		this.animator = GetComponent<Animator> ();
+//		item_data_base = GetComponent<ItemDataBase> ();
+//		item_data_base.items.Add (new ItemManager ("Fish", false));
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
 		int key = 0;
 		if (Input.GetKey(KeyCode.LeftArrow)) {
 			key = -1;
@@ -51,4 +60,21 @@ public class playerscript : MonoBehaviour {
 			jump = false;
 		}
 	}
+
+	void OnTriggerEnter2D(Collider2D collision){
+		ItemTrigger (collision);
+	}
+
+	void ItemTrigger(Collider2D collision){
+		if (collision.tag == "Coffee") {
+			Debug.Log (ItemDataBase.items_dict["Coffee"].item_name);
+			ItemDataBase.items_dict ["Coffee"].item_get = true;
+			Destroy (GameObject.Find("Coffee"));
+		} else {
+
+		}
+					
+	}
+
 }
+
