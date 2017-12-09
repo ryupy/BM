@@ -5,6 +5,7 @@ using UnityEngine;
 public class CameraController : MonoBehaviour {
 
 	GameObject player;
+	private float camera_y = 2.0f;
 
 	// Use this for initialization
 	void Start () {
@@ -17,11 +18,11 @@ public class CameraController : MonoBehaviour {
 		float cam_player_displacement_x = playerPos.x - transform.position.x;
 		float trace_length = 3.0f;
 		if (cam_player_displacement_x >= trace_length) {
-			transform.position = new Vector3 (playerPos.x - trace_length, transform.position.y, transform.position.z);
+			transform.position = new Vector3 (playerPos.x - trace_length, playerPos.y + camera_y, transform.position.z);
 		} else if (cam_player_displacement_x <= -1*trace_length) {
-			transform.position = new Vector3 (playerPos.x + trace_length, transform.position.y, transform.position.z);
+			transform.position = new Vector3 (playerPos.x + trace_length, playerPos.y+ camera_y, transform.position.z);
 		} else {
-			transform.position = new Vector3 (transform.position.x, transform.position.y, transform.position.z);
+			transform.position = new Vector3 (transform.position.x, playerPos.y + camera_y, transform.position.z);
 		}
 
 	}

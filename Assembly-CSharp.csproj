@@ -57,6 +57,7 @@
      <Compile Include="Assets\FlagManager\Sample\SampleMoveObject.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Door.cs" />
+     <Compile Include="Assets\Scripts\Fade.cs" />
      <Compile Include="Assets\Scripts\Game_Directer.cs" />
      <Compile Include="Assets\Scripts\item.cs" />
      <Compile Include="Assets\Scripts\ItemDataBase.cs" />
