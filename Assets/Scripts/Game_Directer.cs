@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Game_Directer : MonoBehaviour {
 
@@ -31,9 +32,9 @@ public class Game_Directer : MonoBehaviour {
 		}
 	}
 
-//	public void Button_MenuDown(){
-//		item_menu_win_reverse ();
-//	}
+	public void Button_MenuDown(){
+		item_menu_win_reverse ();
+	}
 
 
 	public void item_get_win_reverse(){
