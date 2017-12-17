@@ -15,6 +15,8 @@ public class Door : MonoBehaviour {
 	public string To_door_name;
 	static int DOORTIME = 0;
 	private float red,green,blue,alpha = 1.0f;
+
+
 	// Use this for initialization
 	void Start () {
 		player = GameObject.Find ("Player");

@@ -45,11 +45,9 @@ public class playerscript : MonoBehaviour {
 			transform.localScale = new Vector3 (key, 1, 1);
 			this.rigidbody2d.velocity = new Vector2 (key * speed, this.rigidbody2d.velocity.y);
 			this.animator.SetBool ("WALK", true);
-
 		}else{
 			this.rigidbody2d.velocity = new Vector2 (0, this.rigidbody2d.velocity.y);
 			this.animator.SetBool ("WALK", false);
-
 		}
 
 		/// A&&B A=trueかつB=trueで1を返す
@@ -70,6 +68,7 @@ public class playerscript : MonoBehaviour {
 		ItemTrigger (collision);
 	}
 
+
 	void ItemTrigger(Collider2D collision){
 		if (collision.tag == "Coffee") {
 			Debug.Log (ItemDataBase.items_dict["Coffee"].item_name);
@@ -87,12 +86,8 @@ public class playerscript : MonoBehaviour {
 				game_director.GetComponent<Game_Directer> ().popup = true;
 			}
 			Destroy (GameObject.Find("Fish"));
-
 		} else {
-
 		}
-					
 	}
-
 }
 

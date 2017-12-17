@@ -55,6 +55,7 @@
      <Compile Include="Assets\FlagManager\Sample\EscapeGame.cs" />
      <Compile Include="Assets\FlagManager\Sample\SampleGUI.cs" />
      <Compile Include="Assets\FlagManager\Sample\SampleMoveObject.cs" />
+     <Compile Include="Assets\Scripts\AudioMixer.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
      <Compile Include="Assets\Scripts\Door.cs" />
      <Compile Include="Assets\Scripts\Fade.cs" />

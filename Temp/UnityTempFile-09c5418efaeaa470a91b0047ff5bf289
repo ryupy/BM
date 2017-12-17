@@ -101,6 +101,7 @@
 'Assets/FlagManager/Sample/EscapeGame.cs'
 'Assets/FlagManager/Sample/SampleGUI.cs'
 'Assets/FlagManager/Sample/SampleMoveObject.cs'
+'Assets/Scripts/AudioMixer.cs'
 'Assets/Scripts/CameraController.cs'
 'Assets/Scripts/Door.cs'
 'Assets/Scripts/Fade.cs'

@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class ItemDataBase : MonoBehaviour {
+	/// <summary>
+	/// staticにするとsceneを移動しても破壊されなくなる。
+	/// </summary>
 	public static Dictionary<string, ItemManager> items_dict = new Dictionary<string, ItemManager>();
 	// Use this for initialization
 	void Start () {
