@@ -8,12 +8,14 @@ public class Game_Directer : MonoBehaviour {
 
 	public Canvas canvasitemget = null;
 	public Canvas canvasitemmenu = null;
+	public Canvas canvasconfig = null;
 	public bool popup = false;
 	private bool popup_now = false;
 	// Use this for initialization
 	void Start () {
 		item_get_win_reverse ();
 		item_menu_win_reverse ();
+		config_win_reverse ();
 	}
 	
 	// Update is called once per frame
@@ -46,6 +48,12 @@ public class Game_Directer : MonoBehaviour {
 	public void item_menu_win_reverse(){
 		if (canvasitemmenu != null) {
 			canvasitemmenu.enabled = !canvasitemmenu.enabled;
+		}
+	}
+
+	public void config_win_reverse(){
+		if (canvasconfig != null) {
+			canvasconfig.enabled = !canvasconfig.enabled;
 		}
 	}
 }
