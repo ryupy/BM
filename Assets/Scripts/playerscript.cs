@@ -51,10 +51,10 @@ public class playerscript : MonoBehaviour {
 		}
 
 		/// A&&B A=trueかつB=trueで1を返す
-		if (Input.GetKeyDown("space") && !jump) {
-			rigidbody2d.AddForce (Vector2.up * flap);
-			jump = true;	
-		}
+//		if (Input.GetKeyDown("space") && !jump) {
+//			rigidbody2d.AddForce (Vector2.up * flap);
+//			jump = true;	
+//		}
 	}
 
 
@@ -70,22 +70,22 @@ public class playerscript : MonoBehaviour {
 
 
 	void ItemTrigger(Collider2D collision){
-		if (collision.tag == "Coffee") {
+		if (collision.tag == "Item/Coffee") {
 			Debug.Log (ItemDataBase.items_dict["Coffee"].item_name);
 			ItemDataBase.items_dict ["Coffee"].item_get = true;
 			if (ItemDataBase.items_dict ["Coffee"].item_popup_mes) {
 				text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Coffee"].item_get_text;
 				game_director.GetComponent<Game_Directer> ().popup = true;
 			}
-			Destroy (GameObject.Find("Coffee"));
-		} else if(collision.tag == "Fish"){
+			Destroy (GameObject.Find("Item_Coffee"));
+		} else if(collision.tag == "Item/Fish"){
 			Debug.Log (ItemDataBase.items_dict["Fish"].item_name);
 			ItemDataBase.items_dict ["Fish"].item_get = true;
 			if (ItemDataBase.items_dict ["Fish"].item_popup_mes) {
 				text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Fish"].item_get_text;
 				game_director.GetComponent<Game_Directer> ().popup = true;
 			}
-			Destroy (GameObject.Find("Fish"));
+			Destroy (GameObject.Find("Item_Fish"));
 		} else {
 		}
 	}

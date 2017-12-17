@@ -64,6 +64,7 @@
      <Compile Include="Assets\Scripts\ItemManager.cs" />
      <Compile Include="Assets\Scripts\MessageManager.cs" />
      <Compile Include="Assets\Scripts\playerscript.cs" />
+     <Compile Include="Assets\Scripts\TagUtility.cs" />
      <Compile Include="Assets\Scripts\Title_Directer.cs" />
      <None Include="Assets\hitori_yubin_soundpack\yubin_readme.txt" />
  <Reference Include="UnityEngine.UI">

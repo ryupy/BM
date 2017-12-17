@@ -9,6 +9,8 @@ TagManager:
   - player
   - Coffee
   - Fish
+  - Item/Coffee
+  - Item/Fish
   layers:
   - Default
   - TransparentFX
