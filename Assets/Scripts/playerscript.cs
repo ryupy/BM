@@ -8,8 +8,8 @@ using UnityEngine.SceneManagement;
 public class playerscript : MonoBehaviour {
 	
 
-	float flap = 200f;
-	bool jump = false;
+//	float flap = 200f;
+//	bool jump = false;
 	Rigidbody2D rigidbody2d;
 	Animator animator;
 	GameObject game_director;
@@ -58,11 +58,11 @@ public class playerscript : MonoBehaviour {
 	}
 
 
-	void OnCollisionEnter2D(Collision2D other){
-		if (other.gameObject.CompareTag ("Ground")) {
-			jump = false;
-		}
-	}
+//	void OnCollisionEnter2D(Collision2D other){
+//		if (other.gameObject.CompareTag ("Ground")) {
+//			jump = false;
+//		}
+//	}
 
 	void OnTriggerEnter2D(Collider2D collision){
 		ItemTrigger (collision);
@@ -75,18 +75,29 @@ public class playerscript : MonoBehaviour {
 			ItemDataBase.items_dict ["Coffee"].item_get = true;
 			if (ItemDataBase.items_dict ["Coffee"].item_popup_mes) {
 				text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Coffee"].item_get_text;
+				ItemDataBase.items_dict ["Coffee"].item_image.enabled = true;
 				game_director.GetComponent<Game_Directer> ().popup = true;
 			}
 			Destroy (GameObject.Find("Item_Coffee"));
+
 		} else if(collision.tag == "Item/Fish"){
 			Debug.Log (ItemDataBase.items_dict["Fish"].item_name);
 			ItemDataBase.items_dict ["Fish"].item_get = true;
 			if (ItemDataBase.items_dict ["Fish"].item_popup_mes) {
 				text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Fish"].item_get_text;
+				ItemDataBase.items_dict ["Fish"].item_image.enabled = true;
 				game_director.GetComponent<Game_Directer> ().popup = true;
 			}
 			Destroy (GameObject.Find("Item_Fish"));
-		} else {
+		} else if(collision.tag == "Item/Can"){
+			Debug.Log (ItemDataBase.items_dict["Can"].item_name);
+			ItemDataBase.items_dict ["Can"].item_get = true;
+			if (ItemDataBase.items_dict ["Can"].item_popup_mes) {
+				text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Can"].item_get_text;
+				ItemDataBase.items_dict ["Can"].item_image.enabled = true;
+				game_director.GetComponent<Game_Directer> ().popup = true;
+			}
+			Destroy (GameObject.Find("Item_Can"));
 		}
 	}
 }

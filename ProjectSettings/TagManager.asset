@@ -5,12 +5,10 @@ TagManager:
   serializedVersion: 2
   tags:
   - Ground
-  - playe
   - player
-  - Coffee
-  - Fish
   - Item/Coffee
   - Item/Fish
+  - Item/Can
   layers:
   - Default
   - TransparentFX
