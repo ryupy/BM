@@ -30,7 +30,7 @@ public class Door : MonoBehaviour {
 		//ドアフラグ
 		if (DOORTIME == 0) {
 			if (ItemDataBase.items_dict ["Coffee"].item_get) {
-				if (Input.GetKey (KeyCode.UpArrow) && near) {
+				if (Input.GetKeyDown (KeyCode.UpArrow) && near) {
 					//fading
 					fade_panel.GetComponent<Fade> ().alpha = alpha;
 					red = fade_panel.GetComponent<Image> ().color.r;

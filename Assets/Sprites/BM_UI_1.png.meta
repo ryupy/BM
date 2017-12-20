@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: a8d23eccd5f184d54a89a296acb2231e
-timeCreated: 1513588051
+timeCreated: 1513784817
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -91,10 +91,14 @@ TextureImporter:
         width: 1867
         height: 607
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -933.15936, y: 303.5}
+        - {x: -933.15936, y: -303.5}
+        - {x: 933.5, y: -303.5}
+        - {x: 933.5, y: 303.5}
       tessellationDetail: 0
     - serializedVersion: 2
       name: BM_UI_1_1
@@ -105,10 +109,19 @@ TextureImporter:
         width: 79
         height: 66
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -34.2179, y: 33}
+        - {x: -39.40491, y: 27.247452}
+        - {x: -39.40491, y: 23.790525}
+        - {x: 0.36217904, y: -33}
+        - {x: 5.5491905, y: -33}
+        - {x: 12.465206, y: -29.791828}
+        - {x: 39.5, y: 25.51899}
+        - {x: 39.5, y: 28.975914}
+        - {x: 38.400265, y: 33}
       tessellationDetail: 0
     - serializedVersion: 2
       name: BM_UI_1_2
@@ -119,10 +132,14 @@ TextureImporter:
         width: 469
         height: 439
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -232.64241, y: 219.5}
+        - {x: -232.64241, y: -217.43958}
+        - {x: 234.5, y: -217.43958}
+        - {x: 234.5, y: 219.5}
       tessellationDetail: 0
     - serializedVersion: 2
       name: BM_UI_1_3
@@ -133,7 +150,7 @@ TextureImporter:
         width: 6
         height: 7
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -147,10 +164,61 @@ TextureImporter:
         width: 280
         height: 351
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 98.90843, y: 175.00626}
+        - {x: -63.617928, y: 175.00626}
+        - {x: -61.888924, y: 149.0793}
+        - {x: -54.972908, y: 147.35085}
+        - {x: -48.056892, y: 149.0793}
+        - {x: -10.018809, y: 161.17854}
+        - {x: -18.663828, y: 136.98006}
+        - {x: -15.205821, y: 124.88082}
+        - {x: 0.35521406, y: 109.32465}
+        - {x: 19.374256, y: 97.22541}
+        - {x: 29.74828, y: 100.68234}
+        - {x: 43.58031, y: 86.85464}
+        - {x: 60.87035, y: 86.85464}
+        - {x: 86.805405, y: 98.95388}
+        - {x: 97.17943, y: 107.59619}
+        - {x: 60.87035, y: 78.21232}
+        - {x: 17.645252, y: 95.49695}
+        - {x: -27.308847, y: 117.96697}
+        - {x: -35.953865, y: 142.16545}
+        - {x: -42.86988, y: 147.35085}
+        - {x: -51.5149, y: 149.0793}
+        - {x: -60.15992, y: 142.16545}
+        - {x: -61.888924, y: 136.98006}
+        - {x: -61.888924, y: 131.79468}
+        - {x: -63.617928, y: 126.60928}
+        - {x: -54.972908, y: 104.13927}
+        - {x: -58.430916, y: 83.39771}
+        - {x: -49.785896, y: 71.29847}
+        - {x: -79.17896, y: -105.00476}
+        - {x: -63.617928, y: 124.88082}
+        - {x: -61.888924, y: 133.52313}
+        - {x: -61.888924, y: 142.16545}
+        - {x: -86.09498, y: 130.06621}
+        - {x: -139.69409, y: -27.223927}
+        - {x: -139.69409, y: -146.48787}
+        - {x: -94.74, y: -174.14328}
+        - {x: 55.68334, y: -174.14328}
+        - {x: 140, y: 2.1599457}
+        - {x: 140, y: 142.16545}
+        - {x: 116.19847, y: 173.27779}
+      - - {x: 50.496326, y: 100.68234}
+        - {x: 67.78636, y: 119.695435}
+        - {x: 72.97337, y: 119.695435}
+        - {x: 74.70238, y: 121.4239}
+        - {x: 72.97337, y: 119.695435}
+        - {x: 78.160385, y: 114.51005}
+        - {x: 64.328354, y: 111.053116}
+        - {x: 55.68334, y: 102.410805}
+        - {x: 50.496326, y: 98.95388}
+        - {x: 48.767323, y: 97.22541}
+        - {x: 50.496326, y: 98.95388}
       tessellationDetail: 0
     - serializedVersion: 2
       name: BM_UI_1_5
@@ -161,10 +229,18 @@ TextureImporter:
         width: 22
         height: 100
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -7.739255, y: 50}
+        - {x: -11, y: 48.885628}
+        - {x: -11, y: -46.17984}
+        - {x: -7.739255, y: -49.636765}
+        - {x: 9.550783, y: -49.636765}
+        - {x: 11, y: -46.17984}
+        - {x: 11, y: 48.885628}
+        - {x: 9.550783, y: 50}
       tessellationDetail: 0
     - serializedVersion: 2
       name: BM_UI_1_6
@@ -175,10 +251,20 @@ TextureImporter:
         width: 91
         height: 97
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: 4.696297, y: 46.898697}
+        - {x: -10.8647375, y: 46.898697}
+        - {x: -43.715813, y: 1.9586575}
+        - {x: -43.715813, y: -8.412121}
+        - {x: -5.6777263, y: -46.43831}
+        - {x: -2.2197185, y: -48.16677}
+        - {x: 8.1543045, y: -48.16677}
+        - {x: 45.5, y: -6.6836576}
+        - {x: 45.5, y: 0.23019448}
+        - {x: 44.463387, y: 1.9586575}
       tessellationDetail: 0
     - serializedVersion: 2
       name: BM_UI_1_7
@@ -187,12 +273,20 @@ TextureImporter:
         x: 551
         y: 1045
         width: 20
-        height: 22
+        height: 127
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
-      physicsShape: []
+      physicsShape:
+      - - {x: -6.603752, y: 11}
+        - {x: -10, y: 9.650656}
+        - {x: -10, y: -7.633975}
+        - {x: -6.603752, y: -11}
+        - {x: 8.957283, y: -11}
+        - {x: 10, y: -7.633975}
+        - {x: 10, y: 9.650656}
+        - {x: 8.957283, y: 11}
       tessellationDetail: 0
     outline: []
     physicsShape: []

@@ -29,7 +29,7 @@ public class Game_Directer : MonoBehaviour {
 			popup = false;
 			popup_now = true;
 			Time.timeScale = 0;
-		} else if (Input.GetKey (KeyCode.DownArrow) && popup_now == true) {
+		} else if (Input.GetKeyDown (KeyCode.DownArrow) && popup_now == true) {
 			Debug.Log ("del");
 			item_get_win_reverse ();
 			ItemDataBase.items_dict ["Can"].item_image.enabled = false;

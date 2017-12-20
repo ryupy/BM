@@ -14,6 +14,11 @@ public class playerscript : MonoBehaviour {
 	Animator animator;
 	GameObject game_director;
 	GameObject text;
+	public GameObject Bikkuri;
+	/// <summary>
+	/// publicをつけないと他のクラス内で呼べない
+	/// </summary>
+	public static int key;
 	float speed = 5.0f;
 
 //	GameObject item_data_base;
@@ -33,7 +38,7 @@ public class playerscript : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		int key = 0;
+		key = 0;
 		if (Input.GetKey(KeyCode.LeftArrow)) {
 			key = -1;
 		}
@@ -55,6 +60,7 @@ public class playerscript : MonoBehaviour {
 //			rigidbody2d.AddForce (Vector2.up * flap);
 //			jump = true;	
 //		}
+
 	}
 
 
@@ -68,15 +74,37 @@ public class playerscript : MonoBehaviour {
 	/// (Collider2D collision)から(Collider2D c)に変更 
 	/// </summary>
 	/// <param name="c">C.</param>
+	/// 
 	void OnTriggerEnter2D(Collider2D c){
-		ItemTrigger (c);
+		ItemTriggerEnter (c);
+	}
+
+	void OnTriggerStay2D(Collider2D c){
+		ItemTriggerStay (c);
+	}
+
+	void OnTriggerExit2D(Collider2D c){
+		if (TagUtility.getParentTagName (c.gameObject) == "Item") {
+			Bikkuri_Manager.itemflag = false;
+		}
 	}
 
 
-	void ItemTrigger(Collider2D c){
+	void ItemTriggerEnter (Collider2D c)
+	{
 		if (TagUtility.getParentTagName (c.gameObject) == "Item") {
+			GameObject go = Instantiate (Bikkuri);
+			go.name = Bikkuri.name;
+			Bikkuri_Manager.itemflag = true;
+		}
+	}
+
+	void ItemTriggerStay(Collider2D c){
+			/// なぜか押してもアイテムが取得できない
+		if (Input.GetKeyDown (KeyCode.DownArrow)) {
+
+			if (TagUtility.getChildTagName (c.gameObject) == "Coffee") {
 			
-			if (TagUtility.getChildTagName(c.gameObject) == "Coffee") {
 				Debug.Log (ItemDataBase.items_dict ["Coffee"].item_name);
 				ItemDataBase.items_dict ["Coffee"].item_get = true;
 				if (ItemDataBase.items_dict ["Coffee"].item_popup_mes) {
@@ -86,7 +114,7 @@ public class playerscript : MonoBehaviour {
 				}
 				Destroy (GameObject.Find ("Item_Coffee"));
 
-			} else if (TagUtility.getChildTagName(c.gameObject) == "Fish") {
+			} else if (TagUtility.getChildTagName (c.gameObject) == "Fish") {
 				Debug.Log (ItemDataBase.items_dict ["Fish"].item_name);
 				ItemDataBase.items_dict ["Fish"].item_get = true;
 				if (ItemDataBase.items_dict ["Fish"].item_popup_mes) {
@@ -96,7 +124,7 @@ public class playerscript : MonoBehaviour {
 				}
 				Destroy (GameObject.Find ("Item_Fish"));
 
-			} else if (TagUtility.getChildTagName(c.gameObject) == "Can") {
+			} else if (TagUtility.getChildTagName (c.gameObject) == "Can") {
 				Debug.Log (ItemDataBase.items_dict ["Can"].item_name);
 				ItemDataBase.items_dict ["Can"].item_get = true;
 				if (ItemDataBase.items_dict ["Can"].item_popup_mes) {
@@ -109,4 +137,3 @@ public class playerscript : MonoBehaviour {
 		}
 	}
 }
-
