@@ -64,40 +64,48 @@ public class playerscript : MonoBehaviour {
 //		}
 //	}
 
-	void OnTriggerEnter2D(Collider2D collision){
-		ItemTrigger (collision);
+	/// <summary>
+	/// (Collider2D collision)から(Collider2D c)に変更 
+	/// </summary>
+	/// <param name="c">C.</param>
+	void OnTriggerEnter2D(Collider2D c){
+		ItemTrigger (c);
 	}
 
 
-	void ItemTrigger(Collider2D collision){
-		if (collision.tag == "Item/Coffee") {
-			Debug.Log (ItemDataBase.items_dict["Coffee"].item_name);
-			ItemDataBase.items_dict ["Coffee"].item_get = true;
-			if (ItemDataBase.items_dict ["Coffee"].item_popup_mes) {
-				text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Coffee"].item_get_text;
-				ItemDataBase.items_dict ["Coffee"].item_image.enabled = true;
-				game_director.GetComponent<Game_Directer> ().popup = true;
-			}
-			Destroy (GameObject.Find("Item_Coffee"));
+	void ItemTrigger(Collider2D c){
+		if (TagUtility.getParentTagName (c.gameObject) == "Item") {
+			
+			if (TagUtility.getChildTagName(c.gameObject) == "Coffee") {
+				Debug.Log (ItemDataBase.items_dict ["Coffee"].item_name);
+				ItemDataBase.items_dict ["Coffee"].item_get = true;
+				if (ItemDataBase.items_dict ["Coffee"].item_popup_mes) {
+					text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Coffee"].item_get_text;
+					ItemDataBase.items_dict ["Coffee"].item_image.enabled = true;
+					game_director.GetComponent<Game_Directer> ().popup = true;
+				}
+				Destroy (GameObject.Find ("Item_Coffee"));
 
-		} else if(collision.tag == "Item/Fish"){
-			Debug.Log (ItemDataBase.items_dict["Fish"].item_name);
-			ItemDataBase.items_dict ["Fish"].item_get = true;
-			if (ItemDataBase.items_dict ["Fish"].item_popup_mes) {
-				text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Fish"].item_get_text;
-				ItemDataBase.items_dict ["Fish"].item_image.enabled = true;
-				game_director.GetComponent<Game_Directer> ().popup = true;
+			} else if (TagUtility.getChildTagName(c.gameObject) == "Fish") {
+				Debug.Log (ItemDataBase.items_dict ["Fish"].item_name);
+				ItemDataBase.items_dict ["Fish"].item_get = true;
+				if (ItemDataBase.items_dict ["Fish"].item_popup_mes) {
+					text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Fish"].item_get_text;
+					ItemDataBase.items_dict ["Fish"].item_image.enabled = true;
+					game_director.GetComponent<Game_Directer> ().popup = true;
+				}
+				Destroy (GameObject.Find ("Item_Fish"));
+
+			} else if (TagUtility.getChildTagName(c.gameObject) == "Can") {
+				Debug.Log (ItemDataBase.items_dict ["Can"].item_name);
+				ItemDataBase.items_dict ["Can"].item_get = true;
+				if (ItemDataBase.items_dict ["Can"].item_popup_mes) {
+					text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Can"].item_get_text;
+					ItemDataBase.items_dict ["Can"].item_image.enabled = true;
+					game_director.GetComponent<Game_Directer> ().popup = true;
+				}
+				Destroy (GameObject.Find ("Item_Can"));
 			}
-			Destroy (GameObject.Find("Item_Fish"));
-		} else if(collision.tag == "Item/Can"){
-			Debug.Log (ItemDataBase.items_dict["Can"].item_name);
-			ItemDataBase.items_dict ["Can"].item_get = true;
-			if (ItemDataBase.items_dict ["Can"].item_popup_mes) {
-				text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Can"].item_get_text;
-				ItemDataBase.items_dict ["Can"].item_image.enabled = true;
-				game_director.GetComponent<Game_Directer> ().popup = true;
-			}
-			Destroy (GameObject.Find("Item_Can"));
 		}
 	}
 }
