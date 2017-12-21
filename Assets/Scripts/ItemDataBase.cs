@@ -3,7 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+[SerializeField]
 public class ItemDataBase : MonoBehaviour {
+	[SerializeField]
+
 	/// <summary>
 	/// staticにするとsceneを移動しても破壊されなくなる。
 	/// </summary>
@@ -16,7 +19,7 @@ public class ItemDataBase : MonoBehaviour {
 	void Start () {
 		
 		/// Coffee
-		string coffee_text = "This is a Coffee. ";
+		string coffee_text = "This is a Coffee.";
 		coffee_image.enabled = false;
 		items_dict.Add ("Coffee", new ItemManager("Coffee",false,true,coffee_text, coffee_image));
 

@@ -36,7 +36,6 @@ public class Door : MonoBehaviour {
 					red = fade_panel.GetComponent<Image> ().color.r;
 					blue = fade_panel.GetComponent<Image> ().color.b;
 					green = fade_panel.GetComponent<Image> ().color.g;
-
 					fade_panel.GetComponent<Image> ().color = new Color(red,green,blue,alpha);
 					player.transform.position = to_door.transform.position;
 					DOORTIME = 100;

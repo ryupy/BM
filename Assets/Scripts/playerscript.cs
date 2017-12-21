@@ -64,6 +64,9 @@ public class playerscript : MonoBehaviour {
 				text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict [item_name].item_get_text;
 				ItemDataBase.items_dict [item_name].item_image.enabled = true;
 				game_director.GetComponent<Game_Directer> ().popup = true;
+				///saveセット
+				SaveData.SetClass<ItemDataBase> ("item_database", new ItemDataBase());
+				Debug.Log ("item_database");
 			}
 			Destroy (GameObject.Find (item_name));
 		}

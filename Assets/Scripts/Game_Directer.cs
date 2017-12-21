@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Game_Directer : MonoBehaviour {
 
@@ -39,6 +40,18 @@ public class Game_Directer : MonoBehaviour {
 
 	public void Button_MenuDown(){
 		item_menu_win_reverse ();
+	}
+
+	public void Button_TitleDown(){
+		SceneManager.LoadScene ("Title");
+	}
+
+	/// <summary>
+	/// save buttonが押された時に、セットされているデータをセーブする
+	/// </summary>
+	public void Button_SaveDown(){
+		SaveData.Save ();
+		Debug.Log ("success save");
 	}
 
 
