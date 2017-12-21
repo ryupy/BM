@@ -19,7 +19,7 @@ public class playerscript : MonoBehaviour {
 	/// publicをつけないと他のクラス内で呼べない
 	/// </summary>
 	public static int key;
-	string item_name = null;
+	public static string item_name = null;
 	float speed = 5.0f;
 
 //	GameObject item_data_base;
@@ -71,7 +71,7 @@ public class playerscript : MonoBehaviour {
 				game_director.GetComponent<Game_Directer> ().popup = true;
 			}
 			Destroy (GameObject.Find (item_name));
-			item_name = null;
+//			item_name = null;
 		}
 
 	}
@@ -99,6 +99,7 @@ public class playerscript : MonoBehaviour {
 	void OnTriggerExit2D(Collider2D c){
 		if (TagUtility.getParentTagName (c.gameObject) == "Item") {
 			Bikkuri_Manager.itemflag = false;
+//			item_name = null;
 		}
 	}
 

@@ -16,9 +16,6 @@ public class Game_Directer : MonoBehaviour {
 		item_get_win_reverse ();
 		item_menu_win_reverse ();
 		config_win_reverse ();
-//		ItemDataBase.items_dict["Can"].item_image.enabled = false;
-//		ItemDataBase.items_dict ["Coffee"].item_image.enabled = false;
-//		ItemDataBase.items_dict ["Fish"].item_image.enabled = false;
 	}
 
 	
@@ -32,9 +29,8 @@ public class Game_Directer : MonoBehaviour {
 		} else if (Input.GetKeyDown (KeyCode.DownArrow) && popup_now == true) {
 			Debug.Log ("del");
 			item_get_win_reverse ();
-			ItemDataBase.items_dict ["Can"].item_image.enabled = false;
-			ItemDataBase.items_dict ["Coffee"].item_image.enabled = false;
-			ItemDataBase.items_dict ["Fish"].item_image.enabled = false;
+			ItemDataBase.items_dict [playerscript.item_name].item_image.enabled = false;
+			playerscript.item_name = null;
 			popup_now = false;
 			Time.timeScale = 1;
 		}
