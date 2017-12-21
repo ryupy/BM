@@ -21,7 +21,7 @@ public class ItemDataBase : MonoBehaviour {
 		items_dict.Add ("Coffee", new ItemManager("Coffee",false,true,coffee_text, coffee_image));
 
 		/// Fish
-		string fish_text = "This is a Fish. I wonder this is zenrafish.";
+		string fish_text = "This is a Fish. I wonder this is zebrafish.";
 		fish_image.enabled = false;
 		items_dict.Add ("Fish", new ItemManager("Fish",false,true,fish_text, fish_image));
 

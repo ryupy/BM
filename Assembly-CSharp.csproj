@@ -67,6 +67,7 @@
      <Compile Include="Assets\Scripts\MessageManager.cs" />
      <Compile Include="Assets\Scripts\playerscript.cs" />
      <Compile Include="Assets\Scripts\TagUtility.cs" />
+     <Compile Include="Assets\Scripts\The_Player_Prefs.cs" />
      <Compile Include="Assets\Scripts\Title_Directer.cs" />
      <Compile Include="Assets\Scripts\UI_Directer.cs" />
      <None Include="Assets\hitori_yubin_soundpack\yubin_readme.txt" />

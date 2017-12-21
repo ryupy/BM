@@ -7,17 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class playerscript : MonoBehaviour {
 	
-
-//	float flap = 200f;
-//	bool jump = false;
+///	float flap = 200f;
+	public static bool jump = false;
 	Rigidbody2D rigidbody2d;
 	Animator animator;
 	GameObject game_director;
 	GameObject text;
 	public GameObject Bikkuri;
-	/// <summary>
-	/// publicをつけないと他のクラス内で呼べない
-	/// </summary>
 	public static int key;
 	public static string item_name = null;
 	float speed = 5.0f;
@@ -33,12 +29,11 @@ public class playerscript : MonoBehaviour {
 		this.text = GameObject.Find ("Text");
 //		item_data_base = GetComponent<ItemDataBase> ();
 //		item_data_base.items.Add (new ItemManager ("Fish", false));
-
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
+		
 		key = 0;
 		if (Input.GetKey(KeyCode.LeftArrow)) {
 			key = -1;
@@ -57,10 +52,10 @@ public class playerscript : MonoBehaviour {
 		}
 
 		/// A&&B A=trueかつB=trueで1を返す
-//		if (Input.GetKeyDown("space") && !jump) {
-//			rigidbody2d.AddForce (Vector2.up * flap);
-//			jump = true;	
-//		}
+///		if (Input.GetKeyDown("space") && !jump) {
+///			rigidbody2d.AddForce (Vector2.up * flap);
+///			jump = true;	
+///		}
 
 		if (Bikkuri_Manager.itemflag && Input.GetKeyDown (KeyCode.DownArrow)) {
 			Debug.Log (item_name);
@@ -71,49 +66,47 @@ public class playerscript : MonoBehaviour {
 				game_director.GetComponent<Game_Directer> ().popup = true;
 			}
 			Destroy (GameObject.Find (item_name));
-//			item_name = null;
 		}
-
 	}
 
 
-//	void OnCollisionEnter2D(Collision2D other){
-//		if (other.gameObject.CompareTag ("Ground")) {
-//			jump = false;
-//		}
-//	}
+	void OnTriggerEnter2D(Collider2D c){
+		ItemTriggerEnter (c);
+	}
+
+	void OnTriggerExit2D(Collider2D c){
+		ItemTriggerExit (c);
+	}
+
+	void ItemTriggerExit(Collider2D c){
+		if (TagUtility.getParentTagName (c.gameObject) == "Item") {
+			Bikkuri_Manager.itemflag = false;
+		}
+	}
+
+	void ItemTriggerEnter (Collider2D c){
+		if (TagUtility.getParentTagName (c.gameObject) == "Item") {
+			GameObject go = Instantiate (Bikkuri);
+			go.name = Bikkuri.name;
+			Bikkuri_Manager.itemflag = true;
+			item_name = TagUtility.getChildTagName (c.gameObject);
+		}
+	}
+
+
+
+///	void OnCollisionEnter2D(Collision2D other){
+///		if (other.gameObject.CompareTag ("Ground")) {
+///			jump = false;
+///		}
+///	}
 
 	/// <summary>
 	/// (Collider2D collision)から(Collider2D c)に変更 
 	/// </summary>
 	/// <param name="c">C.</param>
 	/// 
-	void OnTriggerEnter2D(Collider2D c){
-		ItemTriggerEnter (c);
-	}
 
-//	void OnTriggerStay2D(Collider2D c){
-//		ItemTriggerStay (c);
-//	}
-
-	void OnTriggerExit2D(Collider2D c){
-		if (TagUtility.getParentTagName (c.gameObject) == "Item") {
-			Bikkuri_Manager.itemflag = false;
-//			item_name = null;
-		}
-	}
-
-
-	void ItemTriggerEnter (Collider2D c)
-	{
-		if (TagUtility.getParentTagName (c.gameObject) == "Item") {
-			GameObject go = Instantiate (Bikkuri);
-			go.name = Bikkuri.name;
-			Bikkuri_Manager.itemflag = true;
-			item_name = TagUtility.getChildTagName (c.gameObject);
-
-		}
-	}
 
 //	void ItemTriggerStay(Collider2D c){
 //			/// なぜか押してもアイテムが取得できない

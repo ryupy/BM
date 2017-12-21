@@ -20,10 +20,9 @@ public class CameraController : MonoBehaviour {
 		if (cam_player_displacement_x >= trace_length) {
 			transform.position = new Vector3 (playerPos.x - trace_length, playerPos.y + camera_y, transform.position.z);
 		} else if (cam_player_displacement_x <= -1*trace_length) {
-			transform.position = new Vector3 (playerPos.x + trace_length, playerPos.y+ camera_y, transform.position.z);
+			transform.position = new Vector3 (playerPos.x + trace_length, playerPos.y + camera_y, transform.position.z);
 		} else {
 			transform.position = new Vector3 (transform.position.x, playerPos.y + camera_y, transform.position.z);
 		}
-
 	}
 }

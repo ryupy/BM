@@ -30,6 +30,7 @@ public class Game_Directer : MonoBehaviour {
 			Debug.Log ("del");
 			item_get_win_reverse ();
 			ItemDataBase.items_dict [playerscript.item_name].item_image.enabled = false;
+			//ここでplayerscript.item_nameを初期化する
 			playerscript.item_name = null;
 			popup_now = false;
 			Time.timeScale = 1;

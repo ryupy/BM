@@ -113,6 +113,7 @@
 'Assets/Scripts/MessageManager.cs'
 'Assets/Scripts/playerscript.cs'
 'Assets/Scripts/TagUtility.cs'
+'Assets/Scripts/The_Player_Prefs.cs'
 'Assets/Scripts/Title_Directer.cs'
 'Assets/Scripts/UI_Directer.cs'
 -r:'/Applications/Unity/Unity.app/Contents/Mono/lib/mono/unity/System.Runtime.Serialization.dll'
