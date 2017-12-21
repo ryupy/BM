@@ -19,6 +19,7 @@ public class playerscript : MonoBehaviour {
 	/// publicをつけないと他のクラス内で呼べない
 	/// </summary>
 	public static int key;
+	string item_name = null;
 	float speed = 5.0f;
 
 //	GameObject item_data_base;
@@ -61,6 +62,18 @@ public class playerscript : MonoBehaviour {
 //			jump = true;	
 //		}
 
+		if (Bikkuri_Manager.itemflag && Input.GetKeyDown (KeyCode.DownArrow)) {
+			Debug.Log (item_name);
+			ItemDataBase.items_dict [item_name].item_get = true;
+			if (ItemDataBase.items_dict [item_name].item_popup_mes) {
+				text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict [item_name].item_get_text;
+				ItemDataBase.items_dict [item_name].item_image.enabled = true;
+				game_director.GetComponent<Game_Directer> ().popup = true;
+			}
+			Destroy (GameObject.Find (item_name));
+			item_name = null;
+		}
+
 	}
 
 
@@ -79,9 +92,9 @@ public class playerscript : MonoBehaviour {
 		ItemTriggerEnter (c);
 	}
 
-	void OnTriggerStay2D(Collider2D c){
-		ItemTriggerStay (c);
-	}
+//	void OnTriggerStay2D(Collider2D c){
+//		ItemTriggerStay (c);
+//	}
 
 	void OnTriggerExit2D(Collider2D c){
 		if (TagUtility.getParentTagName (c.gameObject) == "Item") {
@@ -96,44 +109,47 @@ public class playerscript : MonoBehaviour {
 			GameObject go = Instantiate (Bikkuri);
 			go.name = Bikkuri.name;
 			Bikkuri_Manager.itemflag = true;
+			item_name = TagUtility.getChildTagName (c.gameObject);
+
 		}
 	}
 
-	void ItemTriggerStay(Collider2D c){
-			/// なぜか押してもアイテムが取得できない
-		if (Input.GetKeyDown (KeyCode.DownArrow)) {
-
-			if (TagUtility.getChildTagName (c.gameObject) == "Coffee") {
-			
-				Debug.Log (ItemDataBase.items_dict ["Coffee"].item_name);
-				ItemDataBase.items_dict ["Coffee"].item_get = true;
-				if (ItemDataBase.items_dict ["Coffee"].item_popup_mes) {
-					text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Coffee"].item_get_text;
-					ItemDataBase.items_dict ["Coffee"].item_image.enabled = true;
-					game_director.GetComponent<Game_Directer> ().popup = true;
-				}
-				Destroy (GameObject.Find ("Item_Coffee"));
-
-			} else if (TagUtility.getChildTagName (c.gameObject) == "Fish") {
-				Debug.Log (ItemDataBase.items_dict ["Fish"].item_name);
-				ItemDataBase.items_dict ["Fish"].item_get = true;
-				if (ItemDataBase.items_dict ["Fish"].item_popup_mes) {
-					text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Fish"].item_get_text;
-					ItemDataBase.items_dict ["Fish"].item_image.enabled = true;
-					game_director.GetComponent<Game_Directer> ().popup = true;
-				}
-				Destroy (GameObject.Find ("Item_Fish"));
-
-			} else if (TagUtility.getChildTagName (c.gameObject) == "Can") {
-				Debug.Log (ItemDataBase.items_dict ["Can"].item_name);
-				ItemDataBase.items_dict ["Can"].item_get = true;
-				if (ItemDataBase.items_dict ["Can"].item_popup_mes) {
-					text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Can"].item_get_text;
-					ItemDataBase.items_dict ["Can"].item_image.enabled = true;
-					game_director.GetComponent<Game_Directer> ().popup = true;
-				}
-				Destroy (GameObject.Find ("Item_Can"));
-			}
-		}
-	}
+//	void ItemTriggerStay(Collider2D c){
+//			/// なぜか押してもアイテムが取得できない
+//		if (Input.GetKeyDown (KeyCode.DownArrow)) {
+//
+//			if (TagUtility.getChildTagName (c.gameObject) == "Coffee") {
+//			
+//				Debug.Log (ItemDataBase.items_dict ["Coffee"].item_name);
+//				ItemDataBase.items_dict ["Coffee"].item_get = true;
+//				if (ItemDataBase.items_dict ["Coffee"].item_popup_mes) {
+//					text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Coffee"].item_get_text;
+//					ItemDataBase.items_dict ["Coffee"].item_image.enabled = true;
+//					game_director.GetComponent<Game_Directer> ().popup = true;
+//				}
+//				Destroy (GameObject.Find ("Item_Coffee"));
+//
+//			}
+//		if (TagUtility.getChildTagName (c.gameObject) == "Fish") {
+//				Debug.Log (ItemDataBase.items_dict ["Fish"].item_name);
+//				ItemDataBase.items_dict ["Fish"].item_get = true;
+//				if (ItemDataBase.items_dict ["Fish"].item_popup_mes) {
+//					text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Fish"].item_get_text;
+//					ItemDataBase.items_dict ["Fish"].item_image.enabled = true;
+//					game_director.GetComponent<Game_Directer> ().popup = true;
+//				}
+//				Destroy (GameObject.Find ("Item_Fish"));
+//
+//			} else if (TagUtility.getChildTagName (c.gameObject) == "Can") {
+//				Debug.Log (ItemDataBase.items_dict ["Can"].item_name);
+//				ItemDataBase.items_dict ["Can"].item_get = true;
+//				if (ItemDataBase.items_dict ["Can"].item_popup_mes) {
+//					text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict ["Can"].item_get_text;
+//					ItemDataBase.items_dict ["Can"].item_image.enabled = true;
+//					game_director.GetComponent<Game_Directer> ().popup = true;
+//				}
+//				Destroy (GameObject.Find ("Item_Can"));
+//			}
+//		}
+//	}
 }
