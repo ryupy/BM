@@ -9,14 +9,11 @@ public class Door_loadscene : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		if (Input.GetKeyDown(KeyCode.UpArrow) && near_loadscene){
-			SaveData.SetString("scene", "Game_2");
-			SaveData.Save ();
 			SceneManager.LoadScene ("Game_2");
 		}
 	}

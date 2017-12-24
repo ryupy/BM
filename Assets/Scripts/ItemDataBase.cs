@@ -3,21 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[SerializeField]
-public class ItemDataBase : MonoBehaviour {
-	[SerializeField]
 
-	/// <summary>
-	/// staticにするとsceneを移動しても破壊されなくなる。
-	/// </summary>
+public class ItemDataBase : MonoBehaviour {
+
 	public static Dictionary<string, ItemManager> items_dict = new Dictionary<string, ItemManager>();
+
 	public Image coffee_image;
 	public Image fish_image;
 	public Image can_image;
 
+
 	// Use this for initialization
 	void Start () {
-		
+
 		/// Coffee
 		string coffee_text = "This is a Coffee.";
 		coffee_image.enabled = false;
@@ -33,11 +31,12 @@ public class ItemDataBase : MonoBehaviour {
 		can_image.enabled = false;
 		items_dict.Add ("Can", new ItemManager("Can", false, true, can_text, can_image));
 
+		Debug.Log (items_dict.Count);
+
 //		items.Add (new ItemManager ("Fish",false));
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
 	}
 }

@@ -8,17 +8,20 @@ using UnityEngine.SceneManagement;
 public class playerscript : MonoBehaviour {
 	
 ///	float flap = 200f;
-	public static bool jump = false;
+///	public static bool jump = false;
 	Rigidbody2D rigidbody2d;
 	Animator animator;
 	GameObject game_director;
 	GameObject text;
+	/// <summary>
+	/// Player頭上のビックリマークgameobject
+	/// </summary>
 	public GameObject Bikkuri;
 	public static int key;
 	public static string item_name = null;
 	float speed = 5.0f;
 
-//	GameObject item_data_base;
+	GameObject item_data_base;
 //	ItemDataBase _item_data_base;
 
 	// Use this for initialization
@@ -27,7 +30,7 @@ public class playerscript : MonoBehaviour {
 		this.animator = GetComponent<Animator> ();
 		this.game_director = GameObject.Find ("GameDirecter");
 		this.text = GameObject.Find ("Text");
-//		item_data_base = GetComponent<ItemDataBase> ();
+		item_data_base = GameObject.Find ("ItemDataBase");
 //		item_data_base.items.Add (new ItemManager ("Fish", false));
 	}
 	
@@ -58,15 +61,14 @@ public class playerscript : MonoBehaviour {
 ///		}
 
 		if (Bikkuri_Manager.itemflag && Input.GetKeyDown (KeyCode.DownArrow)) {
-			Debug.Log (item_name);
 			ItemDataBase.items_dict [item_name].item_get = true;
+//			Debug.Log (item_name + " item_popup_mes = " + ItemDataBase.items_dict [item_name].item_popup_mes);
 			if (ItemDataBase.items_dict [item_name].item_popup_mes) {
 				text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict [item_name].item_get_text;
 				ItemDataBase.items_dict [item_name].item_image.enabled = true;
 				game_director.GetComponent<Game_Directer> ().popup = true;
 				///saveセット
-				SaveData.SetClass<ItemDataBase> ("item_database", new ItemDataBase());
-				Debug.Log ("item_database");
+//				SaveData.SetClass<ItemDataBase> ("item_database", new ItemDataBase());
 			}
 			Destroy (GameObject.Find (item_name));
 		}

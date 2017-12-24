@@ -28,7 +28,6 @@ public class Game_Directer : MonoBehaviour {
 			popup_now = true;
 			Time.timeScale = 0;
 		} else if (Input.GetKeyDown (KeyCode.DownArrow) && popup_now == true) {
-			Debug.Log ("del");
 			item_get_win_reverse ();
 			ItemDataBase.items_dict [playerscript.item_name].item_image.enabled = false;
 			//ここでplayerscript.item_nameを初期化する
@@ -49,10 +48,10 @@ public class Game_Directer : MonoBehaviour {
 	/// <summary>
 	/// save buttonが押された時に、セットされているデータをセーブする
 	/// </summary>
-	public void Button_SaveDown(){
-		SaveData.Save ();
-		Debug.Log ("success save");
-	}
+///	public void Button_SaveDown(){
+///		SaveData.Save ();
+///		Debug.Log ("success save");
+///	}
 
 
 	public void item_get_win_reverse(){
