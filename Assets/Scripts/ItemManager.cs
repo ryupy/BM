@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[System.Serializable]
+//[System.Serializable]
 public class ItemManager{
 	//item名
 	public string item_name;

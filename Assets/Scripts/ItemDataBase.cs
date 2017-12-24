@@ -31,7 +31,6 @@ public class ItemDataBase : MonoBehaviour {
 		can_image.enabled = false;
 		items_dict.Add ("Can", new ItemManager("Can", false, true, can_text, can_image));
 
-		Debug.Log (items_dict.Count);
 
 //		items.Add (new ItemManager ("Fish",false));
 	}

@@ -21,7 +21,7 @@ public class playerscript : MonoBehaviour {
 	public static string item_name = null;
 	float speed = 5.0f;
 
-	GameObject item_data_base;
+//	GameObject item_data_base;
 //	ItemDataBase _item_data_base;
 
 	// Use this for initialization
@@ -30,7 +30,7 @@ public class playerscript : MonoBehaviour {
 		this.animator = GetComponent<Animator> ();
 		this.game_director = GameObject.Find ("GameDirecter");
 		this.text = GameObject.Find ("Text");
-		item_data_base = GameObject.Find ("ItemDataBase");
+//		item_data_base = GameObject.Find ("ItemDataBase");
 //		item_data_base.items.Add (new ItemManager ("Fish", false));
 	}
 	
