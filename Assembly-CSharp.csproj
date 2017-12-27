@@ -51,10 +51,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\FlagManager\FlagManager.cs" />
-     <Compile Include="Assets\FlagManager\Sample\EscapeGame.cs" />
-     <Compile Include="Assets\FlagManager\Sample\SampleGUI.cs" />
-     <Compile Include="Assets\FlagManager\Sample\SampleMoveObject.cs" />
      <Compile Include="Assets\Scripts\AudioMixer.cs" />
      <Compile Include="Assets\Scripts\Bikkuri_Manager.cs" />
      <Compile Include="Assets\Scripts\CameraController.cs" />
@@ -62,7 +58,9 @@
      <Compile Include="Assets\Scripts\Door_loadscene.cs" />
      <Compile Include="Assets\Scripts\Fade.cs" />
      <Compile Include="Assets\Scripts\Game_Directer.cs" />
+     <Compile Include="Assets\Scripts\Game_Flag.cs" />
      <Compile Include="Assets\Scripts\ItemDataBase.cs" />
+     <Compile Include="Assets\Scripts\ItemImage.cs" />
      <Compile Include="Assets\Scripts\ItemManager.cs" />
      <Compile Include="Assets\Scripts\MessageManager.cs" />
      <Compile Include="Assets\Scripts\playerscript.cs" />

@@ -63,10 +63,15 @@ public class playerscript : MonoBehaviour {
 		if (Bikkuri_Manager.itemflag && Input.GetKeyDown (KeyCode.DownArrow)) {
 			ItemDataBase.items_dict [item_name].item_get = true;
 //			Debug.Log (item_name + " item_popup_mes = " + ItemDataBase.items_dict [item_name].item_popup_mes);
+//			Debug.Log (ItemDataBase.items_dict [item_name].item_image.enabled);
 			if (ItemDataBase.items_dict [item_name].item_popup_mes) {
+//				Debug.Log ("a");
 				text.GetComponent<MessageManager> ().message = ItemDataBase.items_dict [item_name].item_get_text;
-				ItemDataBase.items_dict [item_name].item_image.enabled = true;
+//				Debug.Log ("b");
+				ItemImage.image_dict [item_name].enabled = true;
+//				Debug.Log ("c");
 				game_director.GetComponent<Game_Directer> ().popup = true;
+//				Debug.Log ("d");
 				///saveセット
 //				SaveData.SetClass<ItemDataBase> ("item_database", new ItemDataBase());
 			}

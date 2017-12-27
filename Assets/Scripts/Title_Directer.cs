@@ -19,13 +19,13 @@ public class Title_Directer : MonoBehaviour {
 	/// buildsettingに入れておかないとloadできない
 	/// </summary>
 	public void Button_StartDown(){
-		ItemDataBase.items_dict.Clear ();
+		ItemImage.image_dict.Clear ();
 		SceneManager.LoadScene ("Game_1");
 	}
 
 	public void Button_LoadDown(){
-//		string scen_name = SaveData.GetString("scene", "Game_1");
-//		SceneManager.LoadScene (scen_name);
+//		string scene_name = SaveData.GetString("scene", "Game_1");
+//		SceneManager.LoadScene (scene_name);
 	}
 
 

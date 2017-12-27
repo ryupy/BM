@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-//[System.Serializable]
+[System.Serializable]
 public class ItemManager{
 	//item名
 	public string item_name;
@@ -16,11 +16,11 @@ public class ItemManager{
 	//item取得時の画像名
 	public Image item_image;
 
-	public ItemManager(string name,bool get,bool pop_up_mes,string get_text, Image image){
+	public ItemManager (string name, bool get, bool pop_up_mes, string get_text){
 		item_name = name;
 		item_get = get;
 		item_popup_mes = pop_up_mes;
 		item_get_text = get_text;
-		item_image = image;
+//		item_image = image;
 	}
 }

@@ -29,7 +29,7 @@ public class Game_Directer : MonoBehaviour {
 			Time.timeScale = 0;
 		} else if (Input.GetKeyDown (KeyCode.DownArrow) && popup_now == true) {
 			item_get_win_reverse ();
-			ItemDataBase.items_dict [playerscript.item_name].item_image.enabled = false;
+			ItemImage.image_dict [playerscript.item_name].enabled = false;
 			//ここでplayerscript.item_nameを初期化する
 			playerscript.item_name = null;
 			popup_now = false;
